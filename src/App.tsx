@@ -1,8 +1,8 @@
 import { Provider } from "jotai";
 import { CheckSquare } from "lucide-react";
+import { TodoFilter } from "@/components/TodoFilter";
 import { TodoInput } from "@/components/TodoInput";
 import { TodoList } from "@/components/TodoList";
-import { TodoFilter } from "@/components/TodoFilter";
 import { useTodos } from "@/logic/useTodos";
 
 const TodoApp = () => {

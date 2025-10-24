@@ -1,16 +1,16 @@
-import { useAtom, useSetAtom, useAtomValue } from "jotai";
+import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import { useCallback } from "react";
 import {
+  addTodoAtom,
+  clearCompletedAtom,
+  deleteTodoAtom,
   filterAtom,
   filteredTodoIdsAtom,
-  todoStatsAtom,
-  addTodoAtom,
-  deleteTodoAtom,
-  updateTodoAtom,
-  toggleTodoAtom,
-  clearCompletedAtom,
-  toggleAllTodosAtom,
   todoAtomFamily,
+  todoStatsAtom,
+  toggleAllTodosAtom,
+  toggleTodoAtom,
+  updateTodoAtom,
 } from "@/state/state";
 import type { Todo } from "@/type/todo";
 

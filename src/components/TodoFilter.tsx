@@ -1,4 +1,4 @@
-import { ListTodo, CheckSquare, Clock } from "lucide-react";
+import { CheckSquare, Clock, ListTodo } from "lucide-react";
 import type { TodoFilter as FilterType } from "@/type/todo";
 
 interface TodoFilterProps {

@@ -1,7 +1,7 @@
+import { Check, CheckCircle2, Circle, Edit2, Trash2, X } from "lucide-react";
 import { useState } from "react";
-import { Trash2, Edit2, Check, X, CheckCircle2, Circle } from "lucide-react";
-import type { Todo } from "@/type/todo";
 import { useTodoItem } from "@/logic/useTodos";
+import type { Todo } from "@/type/todo";
 
 interface TodoItemProps {
   todo: Todo;
@@ -57,9 +57,9 @@ export const TodoItem = ({
               text-gray-200
               transition-all duration-200
             "
-            autoFocus
           />
           <button
+            type="button"
             onClick={handleSave}
             className="p-2 rounded bg-gray-700 hover:bg-gray-600 text-gray-200 transition-colors duration-200"
             aria-label="Save"
@@ -67,6 +67,7 @@ export const TodoItem = ({
             <Check size={16} />
           </button>
           <button
+            type="button"
             onClick={handleCancel}
             className="p-2 rounded bg-gray-800 hover:bg-gray-700 text-gray-400 transition-colors duration-200"
             aria-label="Cancel"
@@ -93,6 +94,7 @@ export const TodoItem = ({
         <div className="flex items-center gap-3">
           {/* Custom Checkbox */}
           <button
+            type="button"
             onClick={() => onToggle(todo.id)}
             className="relative w-6 h-6 flex-shrink-0"
             aria-label={`Mark ${todo.text} as ${todo.completed ? "incomplete" : "complete"}`}
@@ -127,6 +129,7 @@ export const TodoItem = ({
           `}
           >
             <button
+              type="button"
               onClick={() => setIsEditing(true)}
               className="p-1.5 rounded text-gray-500 hover:text-gray-300 hover:bg-gray-800 transition-colors duration-200"
               aria-label="Edit"
@@ -134,6 +137,7 @@ export const TodoItem = ({
               <Edit2 size={16} />
             </button>
             <button
+              type="button"
               onClick={() => onDelete(todo.id)}
               className="p-1.5 rounded text-gray-500 hover:text-red-400 hover:bg-gray-800 transition-colors duration-200"
               aria-label="Delete"

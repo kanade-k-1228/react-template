@@ -8,9 +8,9 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "fmt": "biome format --write .",
+    "fix": "biome check --write .",
     "lint": "biome lint .",
-    "check": "biome check .",
-    "check:fix": "biome check --write ."
+    "check": "biome check ."
   },
   "dependencies": {
     "jotai": "^2.15.0",

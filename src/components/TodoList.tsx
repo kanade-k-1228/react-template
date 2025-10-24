@@ -1,5 +1,5 @@
-import { TodoItemWrapper } from "./TodoItem";
 import { Inbox } from "lucide-react";
+import { TodoItemWrapper } from "./TodoItem";
 
 interface TodoListProps {
   todoIds: string[];
