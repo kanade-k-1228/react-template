@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head>
+    <script>
+      // Store current location and redirect to root
+      sessionStorage.redirect = location.href;
+      const loc = window.location;
+      const repo = `/${loc.pathname.split("/")[1]}`;
+      loc.replace(`${loc.protocol}//${loc.hostname}${loc.port ? `:${loc.port}` : ""}${repo}`);
+    </script>
+  </head>
+</html>
