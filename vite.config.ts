@@ -5,6 +5,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/react-template/",
   plugins: [react(), tsconfigPaths(), tailwindcss()],
   server: {
     host: "0.0.0.0",

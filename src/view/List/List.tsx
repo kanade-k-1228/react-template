@@ -1,11 +1,11 @@
-import { Provider } from "jotai";
 import { CheckSquare } from "lucide-react";
-import { TodoFilter } from "@/components/TodoFilter";
-import { TodoInput } from "@/components/TodoInput";
-import { TodoList } from "@/components/TodoList";
+import { Link } from "wouter";
 import { useTodos } from "@/logic/useTodos";
+import { TodoFilter } from "./components/TodoFilter";
+import { TodoInput } from "./components/TodoInput";
+import { TodoList } from "./components/TodoList";
 
-const TodoApp = () => {
+export const List = () => {
   const {
     filteredIds,
     filter,
@@ -20,18 +20,33 @@ const TodoApp = () => {
 
   return (
     <div className="min-h-screen bg-gray-950 overflow-hidden">
-      {/* Main content */}
       <div className="relative container mx-auto px-4 py-8 max-w-3xl">
         {/* Header */}
         <header className="mb-8 text-center">
           <div className="inline-flex items-center justify-center gap-2 mb-3">
             <CheckSquare className="text-gray-400" size={28} />
             <h1 className="text-3xl font-semibold text-gray-200">
-              TODO アプリ
+              TODO リスト
             </h1>
           </div>
-          <p className="text-gray-500 text-sm">Reactのサンプルアプリ</p>
+          <p className="text-gray-500 text-sm">リスト表示</p>
         </header>
+
+        {/* Navigation */}
+        <div className="flex justify-center gap-4 mb-6">
+          <Link
+            href="/"
+            className="px-4 py-2 rounded-lg text-gray-300 bg-gray-800 font-medium transition-colors duration-200"
+          >
+            リスト
+          </Link>
+          <Link
+            href="/kanban"
+            className="px-4 py-2 rounded-lg text-gray-500 hover:text-gray-300 font-medium transition-colors duration-200 border border-gray-800 hover:border-gray-700"
+          >
+            カンバン
+          </Link>
+        </div>
 
         {/* Content */}
         <div className="space-y-6">
@@ -70,7 +85,7 @@ const TodoApp = () => {
                   backgroundColor: "rgba(17, 24, 39, 0.5)",
                 }}
               >
-                完了済みを削除 ({stats.completed})
+                ���Jd ({stats.completed})
               </button>
             </div>
           )}
@@ -82,13 +97,5 @@ const TodoApp = () => {
         </footer>
       </div>
     </div>
-  );
-};
-
-export const App = () => {
-  return (
-    <Provider>
-      <TodoApp />
-    </Provider>
   );
 };

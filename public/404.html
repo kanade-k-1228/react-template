@@ -2,11 +2,11 @@
 <html>
   <head>
     <script>
+      // Store current location and redirect to root
       sessionStorage.redirect = location.href;
-      const projectPages = true;
-      const l = window.location;
-      const repo = projectPages ? `/${l.pathname.split("/")[1]}` : "";
-      l.replace(`${l.protocol}//${l.hostname}${l.port ? `:${l.port}` : ""}${repo}`);
+      const loc = window.location;
+      const repo = `/${loc.pathname.split("/")[1]}`;
+      loc.replace(`${loc.protocol}//${loc.hostname}${loc.port ? `:${loc.port}` : ""}${repo}`);
     </script>
   </head>
 </html>
