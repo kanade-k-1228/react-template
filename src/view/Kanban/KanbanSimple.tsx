@@ -1,15 +1,14 @@
-import { useAtomValue, useSetAtom } from "jotai";
+import { useAtomValue } from "jotai";
 import { CheckSquare, Plus } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 import { useTodos } from "@/logic/useTodos";
-import { addTodoAtom, todoIdsAtom } from "@/state/state";
+import { todoIdsAtom } from "@/state/state";
 import { TodoCard } from "./TodoCard";
 
 export const Kanban = () => {
   const { stats, addTodo: addTodoFunc } = useTodos();
   const todoIds = useAtomValue(todoIdsAtom);
-  const _addTodo = useSetAtom(addTodoAtom);
   const [newTodoText, setNewTodoText] = useState("");
   const [draggedTodoId, setDraggedTodoId] = useState<string | null>(null);
 
